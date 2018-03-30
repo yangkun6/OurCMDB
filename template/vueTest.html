@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block style %}
+    <script src = "/static/vendor/jquery/jquery.min.js"></script>
+    <script src = "/static/vendor/jquery/vue.js"></script>
+{% endblock %}
+
+{% block label %}
+    vueTest
+{% endblock %}
+
+{% block content %}
+    {%  verbatim myblock %}
+<!-- 基本的vue
+     <div id = "test">
+     {{ message }}
+     </div>
+     <script>
+        var test = new Vue(
+            {
+                el:"#test",
+                data:{
+                    message:"I am while"
+                }
+            }
+        )
+     </script>
+-->
+<!-- 基本的vue循环
+     <div id = "test">
+     {{ message }}
+     <ul v-for="project in projects">
+         <li>
+             {{ project.name }}
+         </li>
+     </ul>
+     </div>
+     <script>
+        var test = new Vue(
+            {
+                el:"#test",
+                data:{
+                    message:"I am while",
+                    projects:[
+                        {"name":"while"},
+                        {"name":"mk"},
+                        {"name":"cd"},
+                        {"name":"like"},
+                    ]
+
+
+                }
+            }
+        )
+     </script>
+ -->
+<!-- 基本的vue函数绑定
+     <div id = "test">
+        <p v-on:click = "ourTest">
+            {{ message }}
+        </p>
+     </div>
+     <script>
+        var test = new Vue(
+            {
+                el:"#test",
+                data:{
+                    message:"I am while",
+                },
+                methods:{
+                    ourTest:function () {
+                        alert("hello world")
+                    }
+                }
+            }
+        )
+     </script>
+-->
+<!-- 基本的vue双向绑定
+     <div id = "test">
+        <input type = "Test" v-model = "message">
+        <p>
+            {{ message }}
+        </p>
+     </div>
+     <script>
+        var test = new Vue(
+            {
+                el:"#test",
+                data:{
+                    message:"I am while",
+                }
+            }
+        )
+     </script>
+-->
+
+    {% endverbatim myblock %}
+{% endblock %}
+
+
+

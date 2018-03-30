@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block style %}
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/jquery/vue.js"></script>
+    <script src="/static/vendor/jquery/vue-resource.js"></script>
+{% endblock style %}
+{% block label %}
+    用户列表
+{% endblock label %}
+
+{% block content %}
+     <a href="/index" class = "btn btn-primary " style = "margin-left: 20px;">
+        主页
+    </a>
+          <div class="panel-body" id = "pageSize">
+            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        <th>邮箱</th>
+                        <th>电话</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>{% for eq in user1 %}
+                    <tr class="odd gradeX">
+                        <td>{{ eq.username }}</td>
+                        <td>{{ eq.password  }}</td>
+                        <td>{{ eq.email }}</td>
+                        <td class="center">{{ eq.phone}}</td>
+                    </tr>{% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+{% endblock %}

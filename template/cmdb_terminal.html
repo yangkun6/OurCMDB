@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    cmdb_terminal_v1
+{% endblock %}
+
+{% block style %}
+    <script src = "/static/vendor/gateone/gateone.js"></script>
+    <script src = "/static/vendor/jquery/jquery.min.js"></script>
+{% endblock %}
+
+{% block label %}
+    CMDB Terminal V1
+{% endblock %}
+
+{% block content %}
+        <div id = "gateone_container" style = "position:relative; width: 60em; height: 30em;">
+            <div id = "gateone">
+
+            </div>
+        </div>
+    <script>
+        window.onLoad(
+            GateOne.init(
+                    {
+                        url:"https://192.168.1.17:443"
+                    }
+            )
+        )
+    </script>
+{% endblock %}
